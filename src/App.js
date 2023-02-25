@@ -48,7 +48,7 @@ function App() {
       let isDragging = false;
       let headOriginRotation = new THREE.Vector3(0, 0, 0)
 
-      window.addEventListener("mousedown", (event) => {
+      let dragStart = ((event) => {
         let mouse = new THREE.Vector2();
         mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
         mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -61,7 +61,7 @@ function App() {
         }
       });
 
-      window.addEventListener("mousemove", (event) => {
+      let dragMove = ((event) => {
         eyepieces.forEach((eyepiece) => {
           eyepiece.rotation.x = (event.clientY / window.innerWidth) + 1.35;
           eyepiece.rotation.z = -((event.clientX / window.innerHeight) - 0.84);
@@ -72,11 +72,17 @@ function App() {
         }
       });
 
-      window.addEventListener("mouseup", (event) => {
+      let dragEnd = ((event) => {
         isDragging = false;
       });
 
 
+      window.addEventListener("mousedown", dragStart, true);
+      window.addEventListener("touchstart", dragStart, true);
+      window.addEventListener("mousemove", dragMove, true);
+      window.addEventListener("touchmove", dragMove, true);
+      window.addEventListener("mouseup", dragEnd, true);
+      window.addEventListener("touchend", dragEnd, true);
 
 
       let animate = function () {
