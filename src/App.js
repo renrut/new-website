@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import * as THREE from "three";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
@@ -28,7 +27,7 @@ function App() {
 
       let eyepieces = []
       let head;
-      loader.load( '/models/myhead.glb', function ( gltf ) {
+      loader.load( '/models/myheadsm.glb', function ( gltf ) {
         head = gltf.scene;
         gltf.scene.traverse( function ( child ) {
           if(child.name.includes("Sphere")){
