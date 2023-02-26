@@ -6,10 +6,12 @@ import HeadScene from "./components/HeadScene";
 
 function App() {
   // Whether to show about me modal
-  const [showAboutMe, setShowAboutMe] = useState(true);
+  const [showAboutMe, setShowAboutMe] = useState(false);
+
+
 
   return (
-    <div className="App">
+    <div id="App" className="App">
       <div className={"DragContainer"}>
         <p>
           {"Drag Me!"}
@@ -18,11 +20,11 @@ function App() {
       <div className={"HeadSceneContainer"}>
         <HeadScene/>
       </div>
-      <div className={"AboutMeContainer"}>
-          <RainbowText text={"About Me"}/>
+      <div className={"AboutMeContainer"} onClick={()=>{setShowAboutMe(true)}}>
+          <RainbowText text={"About Me"} />
       </div>
       <div className={"About"}>
-        <AboutMeModal props={{isOpen: showAboutMe, closeModal: (() => setShowAboutMe(false))}}/>
+        <AboutMeModal isOpen={showAboutMe} onClose={()=>{setShowAboutMe(false)}}/>
       </div>
 
     </div>
