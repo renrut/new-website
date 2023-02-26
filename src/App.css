@@ -77,10 +77,11 @@ canvas {
 }
 
 .modalAboutLinks{
-  height: 40px;
+  height: 15vh;
   width: 90%;
-  font-size: 2em;
   color: black;
+  font-size: 5vw;
+  overflow-wrap: break-word;
   font-family: Mario;
   padding-left: 22px;
   padding-right: 22px;
