@@ -1,4 +1,4 @@
-import {COLORS} from "../const/colors";
+import {COLORS} from "../const/Colors";
 import React from "react";
 
 //return rainbow text

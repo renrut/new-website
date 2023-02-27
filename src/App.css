@@ -14,17 +14,71 @@ canvas {
   z-index: 0;
 }
 
+.entryScene {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  color: #fff;
+  /*  use local font*/
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  font-size: max(2em, 4vw);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  /*  text shadow*/
+  text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000,
+  0 0 25px #000, 0 0 30px #000, 0 0 35px #000;
+}
+
+.entrySceneText {
+  font-family: 'Courier', sans-serif;
+  font-size: .65em;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+}
+
+a{
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+}
+
+.entryPickerButton {
+  font-family: 'Courier', sans-serif;
+  cursor: pointer;
+  border: 3px solid #fff;
+  background-color: transparent;
+  width: fit-content;
+  height: 10vh;
+  color: #fff;
+  font-size: .75em;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+}
+.entryPickerButton:hover {
+  background:rgba(100, 100, 100, 0.7);
+  border: 3px solid rgba(100, 100, 100, 0.7);
+}
+
 .modal {
   position: fixed;
-  background: #EAEDFF;
-  width: 80%;
-  height: 80%;
-  top: 10%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  height: 100vh;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 2;
   border-radius: 10px;
-  border: 1px solid #000;
   box-shadow: 0 0 20px #000;
   display: flex;
   flex-direction: column;
@@ -46,6 +100,8 @@ canvas {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding: 10px;
+
 }
 
 .modalClose:hover{
@@ -53,7 +109,10 @@ canvas {
 }
 
 .modalAboutInfo{
-  font-size: 1.1em;
+  height: 60%;
+  font-size: max(1.1em, 2vh);
+  padding-top: 0;
+  margin-bottom: 5px;
   padding-left: 22px;
   padding-right: 22px;
   flex-direction: row;
@@ -63,38 +122,46 @@ canvas {
   overflow-y: auto;
 }
 
+
 /*anchors in modalAboutLinks*/
 .modalAboutLinks a {
   padding-left: 15px;
   padding-right: 15px;
-  color: black;
- }
+  color: #fff;
+  text-decoration: none;
+}
 .modalAboutLinks a:visited {
-  color: black;
+  color: #fff;
  }
 .modalAboutLinks a:hover {
   color: #3D3D3D;
 }
 
 .modalAboutLinks{
-  height: 15vh;
+  display: flex;
+  min-width: 0;
+  color: #fff;
+  height: 10vh;
   width: 90%;
-  color: black;
-  font-size: 5vw;
-  overflow-wrap: break-word;
-  font-family: Mario;
-  padding-left: 22px;
-  padding-right: 22px;
-  flex-direction: row;
+  font-size: min(3em, 4vw);
+  font-family: Mario, sans-serif;
+  flex-flow: row wrap;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
+.ModalAboutLink {
+  height: max-content;
+  display: flex;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .DragContainer {
   color: white;
-  font-size: 2.5vw;
-  font-family: Mario;
+  font-size: 3vh;
+  font-family: Mario, sans-serif;
   position: fixed;
   width: 100%;
   height: 10%;
@@ -114,7 +181,7 @@ canvas {
   z-index: 1;
   color: #fff;
   /*  use local font*/
-  font-family: Mario;
+  font-family: Mario, sans-serif;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */

@@ -3,7 +3,6 @@ import * as THREE from "three";
 import {sparkleCursor} from "../sparkleCursor";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 export default function HeadScene(props) {
-  useEffect(() => {
     let scene = new THREE.Scene();
     let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
     let renderer = new THREE.WebGLRenderer();
@@ -145,7 +144,6 @@ export default function HeadScene(props) {
       renderer.render( scene, camera );
     }
     animate();
-  }, []);
 
   return (
     <div className={"headscene"}>
